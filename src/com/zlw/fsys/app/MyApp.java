@@ -1,6 +1,6 @@
-package com.zlw.app;
+package com.zlw.fsys.app;
 
-import com.zlw.view.Zface;
+import com.zlw.fsys.view.Zface;
 
 /**
  * @author Ranger
@@ -11,5 +11,4 @@ public class MyApp {
     public static void main(String[] args){
         new Zface();
     }
-
 }

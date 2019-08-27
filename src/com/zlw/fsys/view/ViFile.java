@@ -1,24 +1,18 @@
-package com.zlw.view;
+package com.zlw.fsys.view;
 
-import com.zlw.exception.ReaderWriterException;
-import com.zlw.service.KeywordService;
-import com.zlw.utils.IOUtils;
-import com.zlw.utils.Variates;
-import com.zlw.utils.ZfaceUtils;
+import com.zlw.fsys.exception.ReaderWriterException;
+import com.zlw.fsys.utils.IOUtils;
 
 import javax.swing.*;
 import javax.swing.text.DefaultCaret;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;

@@ -26,3 +26,6 @@
 
 8.cp
     cp old new      --复制文件或者目录
+
+9.cat
+    cat filename    --阅读文件

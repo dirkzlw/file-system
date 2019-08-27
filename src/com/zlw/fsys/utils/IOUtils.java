@@ -1,9 +1,8 @@
-package com.zlw.utils;
+package com.zlw.fsys.utils;
 
-import com.zlw.exception.CloseIOException;
+import com.zlw.fsys.exception.CloseIOException;
 
 import java.io.Closeable;
-import java.io.IOException;
 
 /**
  * @author Ranger

@@ -1,8 +1,8 @@
-package com.zlw.view;
+package com.zlw.fsys.view;
 
-import com.zlw.service.KeywordService;
-import com.zlw.utils.Variates;
-import com.zlw.utils.ZfaceUtils;
+import com.zlw.fsys.service.KeywordService;
+import com.zlw.fsys.utils.Variates;
+import com.zlw.fsys.utils.ZfaceUtils;
 
 import javax.swing.*;
 import javax.swing.text.DefaultCaret;

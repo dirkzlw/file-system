@@ -1,11 +1,11 @@
-package com.zlw.service;
+package com.zlw.fsys.service;
 
-import com.zlw.exception.CreateFileException;
-import com.zlw.exception.ReaderWriterException;
-import com.zlw.utils.IOUtils;
-import com.zlw.utils.Variates;
-import com.zlw.utils.ZfaceUtils;
-import com.zlw.view.ViFile;
+import com.zlw.fsys.exception.CreateFileException;
+import com.zlw.fsys.exception.ReaderWriterException;
+import com.zlw.fsys.utils.IOUtils;
+import com.zlw.fsys.utils.Variates;
+import com.zlw.fsys.utils.ZfaceUtils;
+import com.zlw.fsys.view.ViFile;
 
 import javax.swing.*;
 import java.io.BufferedReader;
@@ -197,12 +197,38 @@ public class KeywordService {
                     if (vif.exists() && vif.isFile()) {
                         textIn.append("please edit id");
                         textIn.setEditable(false);
-                        ViFile viFile = new ViFile(vif, textIn);
+                        new ViFile(vif, textIn);
 
                     } else {
                         textIn.append("no such file \'" + cs[1] + "\'");
                     }
 
+                } else {
+                    textIn.append("param error");
+                }
+                ZfaceUtils.addRootText(textIn);
+                break;
+            //阅读文件
+            case "cat":
+                if(cs.length == 2){
+                    File catf = new File(Variates.froot + "\\" + cs[1]);
+                    if (catf.exists() && catf.isFile()) {
+                        BufferedReader br = null;
+                        try {
+                            br = new BufferedReader(new FileReader(catf));
+                            String line = "";
+                            while ((line = br.readLine())!=null){
+                                textIn.append(line+"\n");
+                            }
+                        } catch (Exception e){
+                            e = new ReaderWriterException();
+                            System.err.println(e.getMessage());
+                        } finally {
+
+                        }
+                    } else {
+                        textIn.append("no such file \'" + cs[1] + "\'");
+                    }
                 } else {
                     textIn.append("param error");
                 }
@@ -305,5 +331,4 @@ public class KeywordService {
             }
         }
     }
-
 }
